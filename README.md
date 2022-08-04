@@ -76,7 +76,7 @@ to use a specific security content format. We let you choose.
 
 ![Build system schema](docs/readme_images/build_schema.svg "Build system schema")
 
-## A little bit of history?
+## A little bit of history
 
 The *"ComplianceAsCode"* project started in 2011 as a collaboration between United States Government agencies and commercial operating system vendors.
 The original name was *"SCAP Security Guide"*, commonly abbreviated as SSG.
@@ -94,3 +94,11 @@ decided to change the name of the project to `ComplianceAsCode`, in order to avo
 
 We envision that the future will be format-agnostic. That's why opted for an
 abstraction instead of using XCCDF for the input format.
+
+## Further reading
+
+The SSG homepage is [https://www.open-scap.org/security-policies/scap-security-guide/](https://www.open-scap.org/security-policies/scap-security-guide/).
+
+* [SSG User Manual](docs/manual/user_guide.adoc)
+* [SSG Developer Guide](https://complianceascode.readthedocs.io/)
+* [Compliance As Code Blog](https://complianceascode.github.io/)
