@@ -59,6 +59,9 @@ if [ -x "$(command -v curl)" ] && [ $CURL -eq 1 ]; then
   
   ##
   dnf install curl -y
+  
+  ## Download scap-security-guide with cURL
+  curl -o ${TARGETDIR}/scap-security-guide-${VERSION}.zip -L https://github.com/ComplianceAsCode/content/releases/download/v${VERSION}/scap-security-guide-${VERSION}.zip  
 fi
 
 ## Check if unzip is installed
