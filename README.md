@@ -8,7 +8,7 @@ from the [scap-security-guide v0.1.63](https://github.com/ComplianceAsCode/conte
 
 *"Evaluate-scap"* download all rules from the [scap-security-guide](https://github.com/ComplianceAsCode/content), generates a "remediation" script and guide for each SCAP profile.
 
-## What is SCAP Security Guide?
+## What is SCAP Security Guide
 
 *"SCAP Security Guide"* is a security policy written in a form of SCAP documents. The security policy created in SCAP Security Guide covers many areas of computer security and provides the best-practice solutions. The guide consists of rules with very detailed description and also includes proven remediation scripts, optimized for target systems. SCAP Security Guide, together with OpenSCAP tools, can be used for auditing your system in an automated way.
 
@@ -39,7 +39,7 @@ platforms ...
 
 [Open SCAP Website](https://www.open-scap.org/security-policies/scap-security-guide)
 
-## What is Security automation content in SCAP, Bash, Ansible, and other formats?
+## What is Security automation content in SCAP, Bash, Ansible, and other formats
 
 ![NIST logo](docs/readme_images/nist_logo.svg "NIST logo") &nbsp; &nbsp; ![Ansible logo](docs/readme_images/ansible_logo.svg "Ansible logo") &nbsp; &nbsp; ![Bash logo](docs/readme_images/bash_logo.png "Bash logo")
 
@@ -61,7 +61,7 @@ profiles.  These are meant to be run on machines to put them into
 compliance.  We recommend using other formats but understand that for
 some deployment scenarios bash is the only option.
 
-### Why?
+### Why
 
 We want multiple organizations to be able to efficiently develop security
 content. By taking advantage of the powerful build system of this project,
