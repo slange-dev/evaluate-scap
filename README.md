@@ -1,5 +1,7 @@
 # Evaluate-scap
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/160f07504225461ea28dfe7a70963d92)](https://app.codacy.com/gh/slange-dev/evaluate-scap?utm_source=github.com&utm_medium=referral&utm_content=slange-dev/evaluate-scap&utm_campaign=Badge_Grade_Settings)
+
 ## What is Evaluate-scap?
 *"Evaluate-scap"* is a script that evaluates the SCAP profile rules
 from the [scap-security-guide v0.1.63](https://github.com/ComplianceAsCode/content/releases/tag/v0.1.63) on your linux machine.
