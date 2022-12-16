@@ -4,7 +4,6 @@
 
 ## What is Evaluate-scap
 
-
 *"Evaluate-scap"* is a script that evaluates the SCAP profile rules
 from the [scap-security-guide v0.1.63](https://github.com/ComplianceAsCode/content/releases/tag/v0.1.63) on your linux machine.
 
