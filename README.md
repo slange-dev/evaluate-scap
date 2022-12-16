@@ -26,15 +26,15 @@ SCAP Security guide is a dynamic open source project, which means that many orga
 
 *"The purpose of Scap-security-guide project"* is to create *security policy content* for various
 platforms ...
-- *Red Hat Enterprise Linux*
-- *Fedora*
-- *Ubuntu*
-- *Debian*
-- *SUSE Linux Enterprise Server (SLES)*
-- ... as well as products 
-- *Firefox*
-- *Chromium*
-- *JRE*
+- Red Hat Enterprise Linux
+- Fedora
+- Ubuntu
+- Debian
+- SUSE Linux Enterprise Server (SLES)
+- ... as well as products
+- Firefox
+- Chromium
+- JRE
 - ... We aim to make it as easy as possible to write new and maintain existing
 
 [Open SCAP Website](https://www.open-scap.org/security-policies/scap-security-guide)
