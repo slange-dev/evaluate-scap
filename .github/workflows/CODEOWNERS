@@ -1,0 +1,12 @@
+# Default code owner
+*                        @slange-dev
+
+# the last matching pattern takes the most
+
+#*.md                     
+#*.patch                  
+  
+#.github/                 
+#.vscode                  
+
+#config/                  
