@@ -15,10 +15,10 @@ from the [scap-security-guide v0.1.63](https://github.com/ComplianceAsCode/conte
 SCAP Security Guide implements security guidances recommended by respected authorities, namely PCI DSS, STIG, and USGCB. SCAP Security Guide transforms these security guidances into a machine readable format which then can be used by OpenSCAP to audit your system. SCAP Security Guide builds multiple security baselines from a single high-quality SCAP content. The DISA STIG for RHEL 6, which provides required settings for US Department of Defense systems, is one example of a baseline created from this guidance. If your systems must to comply to these baselines, you simply select appropriate profile from SCAP Security Guide.
 
 Security policies in SCAP Security Guide are available for various operating systems and other software
--  Fedora,
--  Red Hat Enterprise Linux,
--  Mozilla Firefox
--  and others
+- Fedora,
+- Red Hat Enterprise Linux,
+- Mozilla Firefox
+- and others
 
 SCAP Security guide is a dynamic open source project, which means that many organizations interested in computer security share their efforts and collaborate on security policies contained in SCAP Security guide. It has usage in Military and Intelligence communities, healthcare, aviation, telecom and other industries. And above all, SCAP Security guide is available for download free.
 
