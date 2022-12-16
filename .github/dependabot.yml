@@ -1,6 +1,27 @@
 version: 2
 updates:
+# Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
+# Workflow files stored in the
+# default location of `.github/workflows`
     directory: "/"
     schedule:
+# Check for updates to GitHub Actions every weekday    
       interval: "daily"
+      # Check for updates at 9:00
+      time: "09:00"
+# Use Europe/Berlin Standard Time
+      timezone: "Europe/Berlin"
+# Specify labels for npm pull requests
+    labels:
+      - "dependencies"      
+# Add assignees
+    assignees:
+      - "slange-dev"
+#    allow:
+      # Allow both direct and indirect updates for all packages
+#      - dependency-type: "all"
+# Specify reviewers for pull requests
+# Add reviewers
+    reviewers:
+      - "slange-dev"
