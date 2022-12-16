@@ -13,4 +13,4 @@ religion, or sexual identity and orientation.
 
 
 * Don't shit on people's work
-* Listen  (with your eyes since its code)
+* Listen (with your eyes since its code)
