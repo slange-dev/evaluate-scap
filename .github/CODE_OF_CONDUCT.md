@@ -12,4 +12,4 @@ religion, or sexual identity and orientation.
 ## Our Standards
 
 * Don't shit on people's work
-* Listen (with your eyes since its code)
+* Listen  (with your eyes since its code)
