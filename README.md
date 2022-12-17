@@ -38,10 +38,10 @@ you simply select appropriate profile from SCAP Security Guide.
 Security policies in SCAP Security Guide are available
 for various operating systems and other software
 
--	Fedora
--	Red Hat Enterprise Linux
--	Mozilla Firefox
--	and others
+- Fedora
+- Red Hat Enterprise Linux
+- Mozilla Firefox
+- and others
 
 SCAP Security guide is a dynamic open source project,
 which means that many organizations interested in computer
@@ -56,16 +56,16 @@ And above all, SCAP Security guide is available for download free.
 *"The purpose of Scap-security-guide project"* is to create
 *security policy content* for various platforms ...
 
--	Red Hat Enterprise Linux
--	Fedora
--	Ubuntu
--	Debian
--	SUSE Linux Enterprise Server (SLES)
--	... as well as products
--	Firefox
--	Chromium
--	JRE
--	... We aim to make it as easy as possible to write new and maintain existing  
+- Red Hat Enterprise Linux
+- Fedora
+- Ubuntu
+- Debian
+- SUSE Linux Enterprise Server (SLES)
+- ... as well as products
+- Firefox
+- Chromium
+- JRE
+- ... We aim to make it as easy as possible to write new and maintain existing  
 
 [Open SCAP Website](https://www.open-scap.org/security-policies/scap-security-guide)
 
