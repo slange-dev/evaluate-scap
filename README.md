@@ -50,7 +50,7 @@ It has usage in Military and Intelligence communities, healthcare,
 aviation, telecom and other industries.
 And above all, SCAP Security guide is available for download free.
 
-# What is the purpose of Scap-security-guide project
+## What is the purpose of Scap-security-guide project
 
 *"The purpose of Scap-security-guide project"* is to create
 *security policy content* for various platforms ...
@@ -96,7 +96,7 @@ These are meant to be run on machines to put them into compliance.
 We recommend using other formats but understand that for
 some deployment scenarios bash is the only option.
 
-### Why
+## Why
 
 We want multiple organizations to be able to efficiently develop security
 content.
@@ -116,7 +116,7 @@ to use a specific security content format. We let you choose.
 
 ![Build system schema](docs/readme_images/build_schema.svg "Build system schema")
 
-# A little bit of history
+## A little bit of history
 
 The *"ComplianceAsCode"* project started in 2011 as a collaboration between
 United States Government agencies and commercial operating system vendors.
