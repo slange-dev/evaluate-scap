@@ -70,7 +70,7 @@ And above all, SCAP Security guide is available for download free.
 
 [Open SCAP Website](https://www.open-scap.org/security-policies/scap-security-guide)
 
-## What is Security automation content in SCAP, Bash, Ansible, etc.
+## What is Security automation content in SCAP
 
 ![NIST logo](docs/readme_images/nist_logo.svg "NIST logo") &nbsp; &nbsp;
 ![Ansible logo](docs/readme_images/ansible_logo.svg "Ansible logo")
