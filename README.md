@@ -77,25 +77,29 @@ And above all, SCAP Security guide is available for download free.
 *"SCAP content"* refers to documents  in the *XCCDF*, *OVAL* and
 *Source DataStream* formats.  These documents can be presented
 in different forms and by different organizations to meet their security
-automation and technical implementation needs.  For general use, we
-recommend *Source DataStreams* because they contain all the data you
-need to evaluate and put machines into compliance. The datastreams are
-part of our release ZIP archives.
+automation and technical implementation needs.
+For general use, we recommend *Source DataStreams* because
+they contain all the data you need to evaluate and put machines
+into compliance.
+The datastreams are part of our release ZIP archives.
 
 *"Ansible content"* refers to Ansible playbooks generated from security
-profiles.  These can be used both in check-mode to evaluate compliance,
-as well as run-mode to put machines into compliance.  We publish these
-on *Ansible Galaxy* as well as in release ZIP archives.
+profiles.
+These can be used both in check-mode to evaluate compliance,
+as well as run-mode to put machines into compliance.
+We publish these on *Ansible Galaxy* as well as in release ZIP archives.
 
 *"Bash fix files"* refers to *Bash* scripts generated from security
-profiles.  These are meant to be run on machines to put them into
-compliance.  We recommend using other formats but understand that for
+profiles.
+These are meant to be run on machines to put them into compliance.
+We recommend using other formats but understand that for
 some deployment scenarios bash is the only option.
 
 ### Why
 
 We want multiple organizations to be able to efficiently develop security
-content. By taking advantage of the powerful build system of this project,
+content.
+By taking advantage of the powerful build system of this project,
 we avoid as much redundancy as possible.
 
 The build system combines the easy-to-edit YAML rule files with OVAL checks,
