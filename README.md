@@ -1,8 +1,8 @@
-# Evaluate-scap  
+# Evaluate-scap
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f35addf7e9c84475809e67bb647ddb7e)](https://www.codacy.com/gh/slange-dev/evaluate-scap/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=slange-dev/evaluate-scap&amp;utm_campaign=Badge_Grade)
 
-## What is Evaluate-scap  
+## What is Evaluate-scap
 
 *"Evaluate-scap"* is a script that evaluates the SCAP profile rules
 from the [scap-security-guide v0.1.63](https://github.com/ComplianceAsCode/content/releases/tag/v0.1.63)
@@ -11,7 +11,7 @@ on your linux machine.
 *"Evaluate-scap"* download all rules from the [scap-security-guide](https://github.com/ComplianceAsCode/content),
 generates a "remediation" script and guide for each SCAP profile.
 
-## What is SCAP Security Guide  
+## What is SCAP Security Guide
 
 *"SCAP Security Guide"* is a security policy written
 in a form of SCAP documents.
@@ -38,14 +38,15 @@ you simply select appropriate profile from SCAP Security Guide.
 Security policies in SCAP Security Guide are available
 for various operating systems and other software
 
-- Fedora  
-- Red Hat Enterprise Linux  
-- Mozilla Firefox  
-- and others  
+-	Fedora
+-	Red Hat Enterprise Linux
+-	Mozilla Firefox
+-	and others
 
 SCAP Security guide is a dynamic open source project,
-which means that many organizations interested in computer security share their efforts
-and collaborate on security policies contained in SCAP Security guide.
+which means that many organizations interested in computer
+security share their efforts and collaborate on security
+policies contained in SCAP Security guide.
 It has usage in Military and Intelligence communities, healthcare,
 aviation, telecom and other industries.
 And above all, SCAP Security guide is available for download free.
@@ -55,16 +56,16 @@ And above all, SCAP Security guide is available for download free.
 *"The purpose of Scap-security-guide project"* is to create
 *security policy content* for various platforms ...
 
-- Red Hat Enterprise Linux  
-- Fedora  
-- Ubuntu  
-- Debian  
-- SUSE Linux Enterprise Server (SLES)  
-- ... as well as products  
-- Firefox  
-- Chromium  
-- JRE  
-- ... We aim to make it as easy as possible to write new and maintain existing  
+-	Red Hat Enterprise Linux
+-	Fedora
+-	Ubuntu
+-	Debian
+-	SUSE Linux Enterprise Server (SLES)
+-	... as well as products
+-	Firefox
+-	Chromium
+-	JRE
+-	... We aim to make it as easy as possible to write new and maintain existing  
 
 [Open SCAP Website](https://www.open-scap.org/security-policies/scap-security-guide)
 
