@@ -40,7 +40,8 @@ Security policies in SCAP Security Guide are available for various operating sys
 SCAP Security guide is a dynamic open source project,
 which means that many organizations interested in computer security share their efforts
 and collaborate on security policies contained in SCAP Security guide.
-It has usage in Military and Intelligence communities, healthcare, aviation, telecom and other industries.
+It has usage in Military and Intelligence communities, healthcare,
+aviation, telecom and other industries.
 And above all, SCAP Security guide is available for download free.
 
 ### What is the purpose of Scap-security-guide project
