@@ -54,23 +54,23 @@ And above all, SCAP Security guide is available for download free.
 *"The purpose of Scap-security-guide project"* is to create
 *security policy content* for various platforms ...
 
-- Red Hat Enterprise Linux
-- Fedora
-- Ubuntu
-- Debian
-- SUSE Linux Enterprise Server (SLES)
-- ... as well as products
-- Firefox
-- Chromium
-- JRE
-- ... We aim to make it as easy as possible to write new and maintain existing
+- Red Hat Enterprise Linux  
+- Fedora  
+- Ubuntu  
+- Debian  
+- SUSE Linux Enterprise Server (SLES)  
+- ... as well as products  
+- Firefox  
+- Chromium  
+- JRE  
+- ... We aim to make it as easy as possible to write new and maintain existing  
 
 [Open SCAP Website](https://www.open-scap.org/security-policies/scap-security-guide)
 
 ## What is Security automation content in SCAP, Bash, Ansible, and other formats
 
 ![NIST logo](docs/readme_images/nist_logo.svg "NIST logo") &nbsp; &nbsp;
-![Ansible logo](docs/readme_images/ansible_logo.svg "Ansible logo") 
+![Ansible logo](docs/readme_images/ansible_logo.svg "Ansible logo")
 &nbsp; &nbsp;
 ![Bash logo](docs/readme_images/bash_logo.png "Bash logo")
 
