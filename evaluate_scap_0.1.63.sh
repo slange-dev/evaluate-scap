@@ -124,7 +124,7 @@ stig_gui
 for PROFILE in "${PARRAY[@]}"; do
 
     ## Display the profile
-    printf "\n#### %s ####\n\n" ${PROFILE}
+    printf "\n#### %s ####\n\n" "${PROFILE}"
 
     ## Evaluate each profile against oval downloaded from RedHat
     oscap xccdf eval --fetch-remote-resources --profile xccdf_org.ssgproject.content_profile_${PROFILE} \
