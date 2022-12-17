@@ -1,8 +1,6 @@
-# Evaluate-scap
-
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f35addf7e9c84475809e67bb647ddb7e)](https://www.codacy.com/gh/slange-dev/evaluate-scap/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=slange-dev/evaluate-scap&amp;utm_campaign=Badge_Grade)
 
-## What is Evaluate-scap
+# What is Evaluate-scap
 
 *"Evaluate-scap"* is a script that evaluates the SCAP profile rules
 from the [scap-security-guide v0.1.63](https://github.com/ComplianceAsCode/content/releases/tag/v0.1.63)
@@ -52,7 +50,7 @@ It has usage in Military and Intelligence communities, healthcare,
 aviation, telecom and other industries.
 And above all, SCAP Security guide is available for download free.
 
-### What is the purpose of Scap-security-guide project
+# What is the purpose of Scap-security-guide project
 
 *"The purpose of Scap-security-guide project"* is to create
 *security policy content* for various platforms ...
@@ -118,7 +116,7 @@ to use a specific security content format. We let you choose.
 
 ![Build system schema](docs/readme_images/build_schema.svg "Build system schema")
 
-## A little bit of history
+# A little bit of history
 
 The *"ComplianceAsCode"* project started in 2011 as a collaboration between
 United States Government agencies and commercial operating system vendors.
