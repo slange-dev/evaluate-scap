@@ -24,7 +24,8 @@ SCAP Security Guide implements security guidances
 recommended by respected authorities, namely PCI DSS, STIG, and USGCB.
 SCAP Security Guide transforms these security guidances into a machine readable format
 which then can be used by OpenSCAP to audit your system.
-SCAP Security Guide builds multiple security baselines from a single high-quality SCAP content.
+SCAP Security Guide builds multiple security baselines
+from a single high-quality SCAP content.
 The DISA STIG for RHEL 6,
 which provides required settings for US Department of Defense systems,
 is one example of a baseline created from this guidance.
@@ -36,8 +37,11 @@ Security policies in SCAP Security Guide are available for various operating sys
 - Mozilla Firefox
 - and others
 
-SCAP Security guide is a dynamic open source project, which means that many organizations interested in computer security share their efforts and collaborate on security policies contained in SCAP Security guide.
-It has usage in Military and Intelligence communities, healthcare, aviation, telecom and other industries. And above all, SCAP Security guide is available for download free.
+SCAP Security guide is a dynamic open source project,
+which means that many organizations interested in computer security share their efforts
+and collaborate on security policies contained in SCAP Security guide.
+It has usage in Military and Intelligence communities, healthcare, aviation, telecom and other industries.
+And above all, SCAP Security guide is available for download free.
 
 ### What is the purpose of Scap-security-guide project
 
@@ -99,7 +103,8 @@ to use a specific security content format. We let you choose.
 
 ## A little bit of history
 
-The *"ComplianceAsCode"* project started in 2011 as a collaboration between United States Government agencies and commercial operating system vendors.
+The *"ComplianceAsCode"* project started in 2011 as a collaboration between
+United States Government agencies and commercial operating system vendors.
 The original name was *"SCAP Security Guide"*, commonly abbreviated as SSG.
 The original scope was to create SCAP datastreams. Over time, it grew into the
 biggest open-source beyond-SCAP content project.
@@ -111,7 +116,8 @@ Later, the industry starts moving towards different security content formats,
 such as Ansible, Puppet, and Chef InSpec. The community reacted by evolving the
 tooling and helped transform SSG into a more general-purpose security content
 project. This change happened over time in 2017 and 2018. In September 2018, we
-decided to change the name of the project to `ComplianceAsCode`, in order to avoid confusion.
+decided to change the name of the project to `ComplianceAsCode`,
+in order to avoid confusion.
 
 We envision that the future will be format-agnostic. That's why opted for an
 abstraction instead of using XCCDF for the input format.
