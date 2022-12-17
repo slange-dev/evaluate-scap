@@ -1,6 +1,6 @@
-# Contributor Covenant Code of Conduct 
+# Contributor Covenant Code of Conduct
 
-## Our Pledge 
+## Our Pledge
 
 In the interest of fostering an open and welcoming environment,
 we as contributors and maintainers pledge to making participation
@@ -10,7 +10,7 @@ gender identity and expression, level of experience, education,
 socio-economic status, nationality, personal appearance, race,
 religion, or sexual identity and orientation.
 
-## Our Standards 
+## Our Standards
 
 * Don't shit on people's work
 * Listen  (with your eyes since its code)
