@@ -13,7 +13,8 @@ generates a "remediation" script and guide for each SCAP profile.
 
 ## What is SCAP Security Guide
 
-*"SCAP Security Guide"* is a security policy written in a form of SCAP documents.
+*"SCAP Security Guide"* is a security policy written
+in a form of SCAP documents.
 The security policy created in SCAP Security Guide
 covers many areas of computer security and provides the best-practice solutions.
 The guide consists of rules with very detailed description
@@ -34,8 +35,8 @@ is one example of a baseline created from this guidance.
 If your systems must to comply to these baselines,
 you simply select appropriate profile from SCAP Security Guide.
 
-Security policies in SCAP Security Guide are available for various operating systems
-and other software
+Security policies in SCAP Security Guide are available
+for various operating systems and other software
 
 - Fedora
 - Red Hat Enterprise Linux
