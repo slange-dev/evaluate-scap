@@ -141,6 +141,6 @@ abstraction instead of using XCCDF for the input format.
 
 The SSG homepage is [https://www.open-scap.org/security-policies/scap-security-guide/](https://www.open-scap.org/security-policies/scap-security-guide/).
 
-- [SSG User Manual](docs/manual/user_guide.adoc)  
-- [SSG Developer Guide](https://complianceascode.readthedocs.io/)  
-- [Compliance As Code Blog](https://complianceascode.github.io/)  
+- [SSG User Manual](docs/manual/user_guide.adoc)
+- [SSG Developer Guide](https://complianceascode.readthedocs.io/)
+- [Compliance As Code Blog](https://complianceascode.github.io/)
