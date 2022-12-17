@@ -1,6 +1,6 @@
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f35addf7e9c84475809e67bb647ddb7e)](https://www.codacy.com/gh/slange-dev/evaluate-scap/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=slange-dev/evaluate-scap&amp;utm_campaign=Badge_Grade)
-
 # What is Evaluate-scap
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f35addf7e9c84475809e67bb647ddb7e)](https://www.codacy.com/gh/slange-dev/evaluate-scap/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=slange-dev/evaluate-scap&amp;utm_campaign=Badge_Grade)
 
 *"Evaluate-scap"* is a script that evaluates the SCAP profile rules
 from the [scap-security-guide v0.1.63](https://github.com/ComplianceAsCode/content/releases/tag/v0.1.63)
