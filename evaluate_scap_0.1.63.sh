@@ -127,22 +127,22 @@ for PROFILE in "${PARRAY[@]}"; do
     printf "\n#### %s ####\n\n" "${PROFILE}"
 
     ## Evaluate each profile against oval downloaded from RedHat
-    oscap xccdf eval --fetch-remote-resources --profile xccdf_org.ssgproject.content_profile_${PROFILE} \
-     --results ${TARGETDIR}/${HOST}-${DATE}-${PROFILE}.xml \
-     --report  ${TARGETDIR}/${HOST}-${DATE}-${PROFILE}.html \
-     ${CONTENT}/ssg-${OS}-ds.xml;
+    oscap xccdf eval --fetch-remote-resources --profile xccdf_org.ssgproject.content_profile_"${PROFILE}" \
+     --results "${TARGETDIR}"/"${HOST}"-"${DATE}"-"${PROFILE}".xml \
+     --report  "${TARGETDIR}"/"${HOST}"-"${DATE}"-"${PROFILE}".html \
+     "${CONTENT}"/ssg-"${OS}"-ds.xml;
 
     ## Generate remediation script for each profile
     oscap xccdf generate fix --template urn:xccdf:fix:script:sh \
-     --profile xccdf_org.ssgproject.content_profile_${PROFILE} \
-     --output ${TARGETDIR}/remediation-${HOST}-${DATE}-${PROFILE}.sh \
-     ${CONTENT}/ssg-${OS}-ds.xml;
+     --profile xccdf_org.ssgproject.content_profile_"${PROFILE}" \
+     --output "${TARGETDIR}"/remediation-"${HOST}"-"${DATE}"-"${PROFILE}".sh \
+     "${CONTENT}"/ssg-${OS}-ds.xml;
 
        ## Generate Guide for each profile
-       oscap xccdf generate guide --profile xccdf_org.ssgproject.content_profile_${PROFILE} \
-        --output ${TARGETDIR}/scap-security-guide-${VERSION}-${HOST}-${DATE}-${PROFILE}.html \
-        ${CONTENT}/ssg-${OS}-ds.xml;
+       oscap xccdf generate guide --profile xccdf_org.ssgproject.content_profile_"${PROFILE}" \
+        --output "${TARGETDIR}"/scap-security-guide-"${VERSION}"-"${HOST}"-"${DATE}"-"${PROFILE}".html \
+        "${CONTENT}"/ssg-${OS}-ds.xml;
 done
 
 ## Create tar with all results, scripts, guides, etc.
-tar -cvzf ${HOST}-${DATE}-scap_${VERSION}.tar.gz ${TARGETDIR}/${HOST}-${DATE}-*.xml ${TARGETDIR}/${HOST}-${DATE}-*.html ${TARGETDIR}/remediation-${HOST}-${DATE}-*.sh ${TARGETDIR}/scap-security-guide-${VERSION}-${HOST}-${DATE}-*.html
+tar -cvzf "${HOST}"-"${DATE}"-scap_"${VERSION}".tar.gz "${TARGETDIR}"/"${HOST}"-"${DATE}"-*.xml "${TARGETDIR}"/"${HOST}"-"${DATE}"-*.html "${TARGETDIR}"/remediation-"${HOST}"-"${DATE}"-*.sh "${TARGETDIR}"/scap-security-guide-"${VERSION}"-"${HOST}"-"${DATE}"-*.html
