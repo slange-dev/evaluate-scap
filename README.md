@@ -5,9 +5,11 @@
 ## What is Evaluate-scap
 
 *"Evaluate-scap"* is a script that evaluates the SCAP profile rules
-from the [scap-security-guide v0.1.63](https://github.com/ComplianceAsCode/content/releases/tag/v0.1.63) on your linux machine.
+from the [scap-security-guide v0.1.63](https://github.com/ComplianceAsCode/content/releases/tag/v0.1.63)
+on your linux machine.
 
-*"Evaluate-scap"* download all rules from the [scap-security-guide](https://github.com/ComplianceAsCode/content), generates a "remediation" script and guide for each SCAP profile.
+*"Evaluate-scap"* download all rules from the [scap-security-guide](https://github.com/ComplianceAsCode/content),
+generates a "remediation" script and guide for each SCAP profile.
 
 ## What is SCAP Security Guide
 
@@ -29,9 +31,12 @@ from a single high-quality SCAP content.
 The DISA STIG for RHEL 6,
 which provides required settings for US Department of Defense systems,
 is one example of a baseline created from this guidance.
-If your systems must to comply to these baselines, you simply select appropriate profile from SCAP Security Guide.
+If your systems must to comply to these baselines,
+you simply select appropriate profile from SCAP Security Guide.
 
-Security policies in SCAP Security Guide are available for various operating systems and other software
+Security policies in SCAP Security Guide are available for various operating systems
+and other software
+
 - Fedora
 - Red Hat Enterprise Linux
 - Mozilla Firefox
@@ -48,6 +53,7 @@ And above all, SCAP Security guide is available for download free.
 
 *"The purpose of Scap-security-guide project"* is to create *security policy content* for various
 platforms ...
+
 - Red Hat Enterprise Linux
 - Fedora
 - Ubuntu
