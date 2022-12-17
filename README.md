@@ -25,8 +25,9 @@ can be used for auditing your system in an automated way.
 
 SCAP Security Guide implements security guidances
 recommended by respected authorities, namely PCI DSS, STIG, and USGCB.
-SCAP Security Guide transforms these security guidances into a machine readable format
-which then can be used by OpenSCAP to audit your system.
+SCAP Security Guide transforms these security guidances into a
+machine readable format which then can be used by OpenSCAP
+to audit your system.
 SCAP Security Guide builds multiple security baselines
 from a single high-quality SCAP content.
 The DISA STIG for RHEL 6,
@@ -69,7 +70,7 @@ And above all, SCAP Security guide is available for download free.
 
 [Open SCAP Website](https://www.open-scap.org/security-policies/scap-security-guide)
 
-## What is Security automation content in SCAP, Bash, Ansible, and other formats
+## What is Security automation content in SCAP, Bash, Ansible, etc.
 
 ![NIST logo](docs/readme_images/nist_logo.svg "NIST logo") &nbsp; &nbsp;
 ![Ansible logo](docs/readme_images/ansible_logo.svg "Ansible logo")
