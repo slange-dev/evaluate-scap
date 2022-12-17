@@ -51,8 +51,8 @@ And above all, SCAP Security guide is available for download free.
 
 ### What is the purpose of Scap-security-guide project
 
-*"The purpose of Scap-security-guide project"* is to create *security policy content* for various
-platforms ...
+*"The purpose of Scap-security-guide project"* is to create
+*security policy content* for various platforms ...
 
 - Red Hat Enterprise Linux
 - Fedora
@@ -69,7 +69,9 @@ platforms ...
 
 ## What is Security automation content in SCAP, Bash, Ansible, and other formats
 
-![NIST logo](docs/readme_images/nist_logo.svg "NIST logo") &nbsp; &nbsp; ![Ansible logo](docs/readme_images/ansible_logo.svg "Ansible logo") &nbsp; &nbsp; ![Bash logo](docs/readme_images/bash_logo.png "Bash logo")
+![NIST logo](docs/readme_images/nist_logo.svg "NIST logo") &nbsp; &nbsp;
+![Ansible logo](docs/readme_images/ansible_logo.svg "Ansible logo") &nbsp; &nbsp;
+![Bash logo](docs/readme_images/bash_logo.png "Bash logo")
 
 *"SCAP content"* refers to documents  in the *XCCDF*, *OVAL* and
 *Source DataStream* formats.  These documents can be presented
