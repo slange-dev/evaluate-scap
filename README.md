@@ -25,7 +25,7 @@ recommended by respected authorities, namely PCI DSS, STIG, and USGCB.
 SCAP Security Guide transforms these security guidances into a machine readable format
 which then can be used by OpenSCAP to audit your system.
 SCAP Security Guide builds multiple security baselines from a single high-quality SCAP content.
-The DISA STIG for RHEL 6, 
+The DISA STIG for RHEL 6,
 which provides required settings for US Department of Defense systems,
 is one example of a baseline created from this guidance.
 If your systems must to comply to these baselines, you simply select appropriate profile from SCAP Security Guide.
