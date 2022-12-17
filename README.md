@@ -12,9 +12,12 @@ from the [scap-security-guide v0.1.63](https://github.com/ComplianceAsCode/conte
 ## What is SCAP Security Guide
 
 *"SCAP Security Guide"* is a security policy written in a form of SCAP documents.
-The security policy created in SCAP Security Guide covers many areas of computer security and provides the best-practice solutions.
-The guide consists of rules with very detailed description and also includes proven remediation scripts, optimized for target systems.
-SCAP Security Guide, together with OpenSCAP tools, can be used for auditing your system in an automated way.
+The security policy created in SCAP Security Guide
+covers many areas of computer security and provides the best-practice solutions.
+The guide consists of rules with very detailed description and also includes proven remediation scripts,
+optimized for target systems.
+SCAP Security Guide, together with OpenSCAP tools,
+can be used for auditing your system in an automated way.
 
 SCAP Security Guide implements security guidances recommended by respected authorities, namely PCI DSS, STIG, and USGCB.
 SCAP Security Guide transforms these security guidances into a machine readable format which then can be used by OpenSCAP to audit your system.
