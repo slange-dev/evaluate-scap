@@ -1,62 +1,60 @@
-version: "2"         # required to adjust maintainability checks
-
+---
+version: "2"
 checks:
-  argument-count:
-    enabled: true
-    config:
-      threshold: 4
-  complex-logic:
-    enabled: true
-    config:
-      threshold: 4
   file-lines:
-    enabled: true
     config:
-      threshold: 250
-  method-complexity:
-    enabled: true
-    config:
-      threshold: 5
-  method-count:
-    enabled: true
-    config:
-      threshold: 20
-  method-lines:
-    enabled: true
-    config:
-      threshold: 25
-  nested-control-flow:
-    enabled: true
-    config:
-      threshold: 4
-  return-statements:
-    enabled: true
-    config:
-      threshold: 4
+      threshold: 400
+
   similar-code:
-    enabled: true
+     config:
+       languages:
+         python:
+           threshold: 40
+
+  method-complexity:
     config:
-      threshold: #language-specific defaults. overrides affect all languages.
-  identical-code:
-    enabled: true
-    config:
-      threshold: #language-specific defaults. overrides affect all languages.
+      threshold: 7
 
 plugins:
+  markdownlint:
+    enabled: true
+  pep8:
+    enabled: true
+  radon:
+    enabled: true
+    config:
+        threshold: "C"
+  sonar-python:
+    enabled: true
   shellcheck:
     enabled: true
+  editorconfig:
+    enabled: true
+    config:
+      editorconfig: .editorconfig
 
 exclude_patterns:
-- "config/"
-- "db/"
-- "dist/"
-- "features/"
-- "**/node_modules/"
-- "script/"
-- "**/spec/"
-- "**/test/"
-- "**/tests/"
-- "Tests/"
-- "**/vendor/"
-- "**/*_test.go"
-- "**/*.d.ts"
+  - "**/*"
+  - "**/.*"
+
+  - "!build-scripts/*.py"
+  - "!ssg/*.py"
+  - "!ssg/**/*.py"
+  - "!utils/*.py"
+
+  - "!shared/**/*.py"
+
+  - "!*.md"
+  - "!**/*.md"
+  - "!.*/*.md"
+
+  - ".editorconfig"
+
+  - "!tests/*.sh"
+  - "!tests/shared/*.sh"
+  - "!utils/*.sh"
+  - "!build_product"
+
+  - "!tests/*.py"
+  - "!tests/ssg_test_suite/*.py"
+  - "!tests/ssg_test_suite/**/*.py"
