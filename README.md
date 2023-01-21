@@ -1,6 +1,14 @@
 # What is Evaluate-scap
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f35addf7e9c84475809e67bb647ddb7e)](https://www.codacy.com/gh/slange-dev/evaluate-scap/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=slange-dev/evaluate-scap&amp;utm_campaign=Badge_Grade)
+[![GitHub commits](https://badgen.net/github/commits/slange-dev/evaluate-scap)](https://github.com/slange-dev/evaluate-scap/commit/)
+[![GitHub latest commit](https://badgen.net/github/last-commit/slange-dev/evaluate-scap)](https://github.com/slange-dev/evaluate-scap/commit/master/)
+[![GitHub issues](https://img.shields.io/github/issues/slange-dev/evaluate-scap)](https://GitHub.com/slange-dev/evaluate-scap/issues/)
+[![GitHub issues-closed](https://img.shields.io/github/issues-closed/slange-dev/evaluate-scap)](https://GitHub.com/slange-dev/evaluate-scap/issues?q=is%3Aissue+is%3Aclosed)
+[![GitHub forks](https://badgen.net/github/forks/slange-dev/evaluate-scap/)](https://github.com/slange-dev/evaluate-scap/network/)
+[![GitHub stars](https://badgen.net/github/stars/slange-dev/evaluate-scap)](https://github.com/slange-dev/evaluate-scap/stargazers/)
+[![GitHub watchers](https://badgen.net/github/watchers/slange-dev/evaluate-scap/)](https://GitHub.com/slange-dev/evaluate-scap/watchers/)
+[![GitHub license](https://img.shields.io/github/license/slange-dev/evaluate-scap)](https://github.com/slange-dev/evaluate-scap/blob/master/LICENSE)
 
 *"Evaluate-scap"* is a script that evaluates the SCAP profile rules
 from the [scap-security-guide v0.1.63](https://github.com/ComplianceAsCode/content/releases/tag/v0.1.63)
