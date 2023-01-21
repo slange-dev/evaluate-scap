@@ -152,3 +152,14 @@ The SSG homepage is [https://www.open-scap.org/security-policies/scap-security-g
 - [SSG User Manual](docs/manual/user_guide.adoc)
 - [SSG Developer Guide](https://complianceascode.readthedocs.io/)
 - [Compliance As Code Blog](https://complianceascode.github.io/)
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
