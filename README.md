@@ -10,9 +10,8 @@
 [![GitHub watchers](https://badgen.net/github/watchers/slange-dev/evaluate-scap/)](https://GitHub.com/slange-dev/evaluate-scap/watchers/)
 [![GitHub license](https://img.shields.io/github/license/slange-dev/evaluate-scap)](https://github.com/slange-dev/evaluate-scap/blob/master/LICENSE)
 
-
 *"Evaluate-scap"* is a script that evaluates the SCAP profile rules
-from the [scap-security-guide v0.1.63](https://github.com/ComplianceAsCode/content/releases/tag/v0.1.63)
+from the [scap-security-guide v0.1.72](https://github.com/ComplianceAsCode/content/releases/tag/v0.1.72)
 on your linux machine.
 
 *"Evaluate-scap"* download all rules from the [scap-security-guide](https://github.com/ComplianceAsCode/content),
