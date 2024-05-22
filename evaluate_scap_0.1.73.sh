@@ -58,7 +58,7 @@ if [ -x "$(command -v curl)" ] && [ $CURL -eq 1 ]; then
   else
   
   ##
-  dnf install curl -y
+  sudo dnf install curl -y
   
   ## Download scap-security-guide with cURL
   curl -o ${TARGETDIR}/scap-security-guide-${VERSION}.zip -L https://github.com/ComplianceAsCode/content/releases/download/v${VERSION}/scap-security-guide-${VERSION}.zip  
@@ -72,7 +72,7 @@ if [ -x "$(command -v unzip)" ]; then
   else
   
   ## Install unzip
-  dnf install unzip -y
+  sudo dnf install unzip -y
 
   ## Unzip scap-security-guide
   unzip -o ${TARGETDIR}/scap-security-guide-${VERSION}.zip -d ${TARGETDIR}
@@ -91,7 +91,7 @@ PARRAY=(
 stig_gui
 
 
-
+## 
 #anssi_bp28_enhanced
 #anssi_bp28_high
 #anssi_bp28_intermediary
@@ -106,7 +106,7 @@ stig_gui
 ## controls to meet low confidentiality, low integrity, and low assurance.
 #cui
 
-## PCI-DSS v3 Control Baseline for Red Hat Enterprise Linux 8
+## PCI-DSS v3 Control Baseline for Red Hat Enterprise Linux 8/9
 #pci-dss
 
 ##
