@@ -11,6 +11,10 @@
 VERSION=0.1.73
 
 ## OS Version
+# Rocky Linux 9 (missed in v0.1.73)
+#OS=rl9
+
+# Redhat Linux 9
 OS=rhel9
 
 # Create directory
@@ -43,7 +47,7 @@ if [ -x "$(command -v wget)" ]; then
 
   ## Set
   CURL=0
-  else
+else
 
   ## Set
   CURL=1
@@ -55,13 +59,13 @@ if [ -x "$(command -v curl)" ] && [ $CURL -eq 1 ]; then
 
   ## Download scap-security-guide with cURL
   curl -o ${TARGETDIR}/scap-security-guide-${VERSION}.zip -L https://github.com/ComplianceAsCode/content/releases/download/v${VERSION}/scap-security-guide-${VERSION}.zip
-  else
-  
+else
+
   ##
   sudo dnf install curl -y
-  
+
   ## Download scap-security-guide with cURL
-  curl -o ${TARGETDIR}/scap-security-guide-${VERSION}.zip -L https://github.com/ComplianceAsCode/content/releases/download/v${VERSION}/scap-security-guide-${VERSION}.zip  
+  curl -o ${TARGETDIR}/scap-security-guide-${VERSION}.zip -L https://github.com/ComplianceAsCode/content/releases/download/v${VERSION}/scap-security-guide-${VERSION}.zip
 fi
 
 ## Check if unzip is installed
@@ -69,8 +73,8 @@ if [ -x "$(command -v unzip)" ]; then
 
   ## Unzip scap-security-guide
   unzip -o ${TARGETDIR}/scap-security-guide-${VERSION}.zip -d ${TARGETDIR}
-  else
-  
+else
+
   ## Install unzip
   sudo dnf install unzip -y
 
@@ -83,67 +87,97 @@ oscap info --fetch-remote-resources ${CONTENT}/ssg-${OS}-ds.xml | grep profile |
 
 ## The following array processes all available profiles, comment out the ones that are not needed
 PARRAY=(
-#################
-## rhel9 / rl9 ##
-#################
-## Security Technical Implementation Guide (STIG) for Red Hat Enterprise
-#stig
-stig_gui
+  #################
+  ## rhel9 / rl9 ##
+  #################
+  # oscap info "/usr/share/xml/scap/ssg/content/ssg-rl9-ds.xml"
+  # oscap info "/usr/share/xml/scap/ssg/content/ssg-rhel9-ds.xml"
 
+  ## Generated: 2024-04-08
 
-## 
-#anssi_bp28_enhanced
-#anssi_bp28_high
-#anssi_bp28_intermediary
-#anssi_bp28_minimal
-#cis
-#cis_server_l1
-#cis_workstation_l1
-#cis_workstation_l2
+  # ANSSI-BP-028 (enhanced)
+  #anssi_bp28_enhanced
 
-## Committee on National Security Systems Instruction (CNSSI) No. 1253, Security
-## Categorization and Control Selection for National Security Systems on security
-## controls to meet low confidentiality, low integrity, and low assurance.
-#cui
+  # ANSSI-BP-028 (high)
+  #anssi_bp28_high
 
-## PCI-DSS v3 Control Baseline for Red Hat Enterprise Linux 8/9
-#pci-dss
+  # ANSSI-BP-028 (intermediary)
+  #anssi_bp28_intermediary
 
-##
-#e8
+  # ANSSI-BP-028 (minimal)
+  #anssi_bp28_minimal
 
-## Health Insurance Portability and Accountability Act
-#hipaa
+  # CCN Red Hat Enterprise Linux 9 - Advanced
+  #ccn_advanced
 
-##
-#ism_o
+  # CCN Red Hat Enterprise Linux 9 - Basic
+  #ccn_basic
 
-## United States Government Configuration Baseline (USGCB / STIG)
-#ospp
-     )
+  # CCN Red Hat Enterprise Linux 9 - Intermediate
+  #ccn_intermediate
+
+  # CIS Red Hat Enterprise Linux 9 Benchmark for Level 2 - Server
+  #cis
+
+  # CIS Red Hat Enterprise Linux 9 Benchmark for Level 1 - Server
+  #cis_server_l1
+
+  # CIS Red Hat Enterprise Linux 9 Benchmark for Level 1 - Workstation
+  #cis_workstation_l1
+
+  # CIS Red Hat Enterprise Linux 9 Benchmark for Level 2 - Workstation
+  #cis_workstation_l2
+
+  # DRAFT - Unclassified Information in Non-federal Information Systems and Organizations (NIST 800-171)
+  ## Committee on National Security Systems Instruction (CNSSI) No. 1253, Security
+  ## Categorization and Control Selection for National Security Systems on security
+  ## controls to meet low confidentiality, low integrity, and low assurance.
+  #cui
+
+  # Australian Cyber Security Centre (ACSC) Essential Eight
+  #e8
+
+  # Health Insurance Portability and Accountability Act (HIPAA)
+  #hipaa
+
+  # Australian Cyber Security Centre (ACSC) ISM Official
+  #ism_o
+
+  # Protection Profile for General Purpose Operating Systems
+  #ospp
+
+  # PCI-DSS v4.0 Control Baseline for Red Hat Enterprise Linux 9
+  #pci-dss
+
+  # DISA STIG for Red Hat Enterprise Linux 9
+  #stig
+
+  # DISA STIG with GUI for Red Hat Enterprise Linux 9
+  stig_gui
+)
 
 ##
 for PROFILE in "${PARRAY[@]}"; do
 
-    ## Display the profile
-    printf "\n#### %s ####\n\n" "${PROFILE}"
+  ## Display the profile
+  printf "\n#### %s ####\n\n" "${PROFILE}"
 
-    ## Evaluate each profile against oval downloaded from RedHat
-    oscap xccdf eval --fetch-remote-resources --profile xccdf_org.ssgproject.content_profile_"${PROFILE}" \
-     --results "${TARGETDIR}"/"${HOST}"-"${DATE}"-"${PROFILE}".xml \
-     --report  "${TARGETDIR}"/"${HOST}"-"${DATE}"-"${PROFILE}".html \
-     "${CONTENT}"/ssg-"${OS}"-ds.xml;
+  ## Evaluate each profile against oval downloaded from RedHat
+  oscap xccdf eval --fetch-remote-resources --profile xccdf_org.ssgproject.content_profile_"${PROFILE}" \
+    --results "${TARGETDIR}"/"${HOST}"-"${DATE}"-"${PROFILE}".xml \
+    --report "${TARGETDIR}"/"${HOST}"-"${DATE}"-"${PROFILE}".html \
+    "${CONTENT}"/ssg-"${OS}"-ds.xml
 
-    ## Generate remediation script for each profile
-    oscap xccdf generate fix --template urn:xccdf:fix:script:sh \
-     --profile xccdf_org.ssgproject.content_profile_"${PROFILE}" \
-     --output "${TARGETDIR}"/remediation-"${HOST}"-"${DATE}"-"${PROFILE}".sh \
-     "${CONTENT}"/ssg-${OS}-ds.xml;
+  ## Generate remediation script for each profile
+  oscap xccdf generate fix --template urn:xccdf:fix:script:sh \
+    --profile xccdf_org.ssgproject.content_profile_"${PROFILE}" \
+    --output "${TARGETDIR}"/remediation-"${HOST}"-"${DATE}"-"${PROFILE}".sh \
+    "${CONTENT}"/ssg-${OS}-ds.xml
 
-       ## Generate Guide for each profile
-       oscap xccdf generate guide --profile xccdf_org.ssgproject.content_profile_"${PROFILE}" \
-        --output "${TARGETDIR}"/scap-security-guide-"${VERSION}"-"${HOST}"-"${DATE}"-"${PROFILE}".html \
-        "${CONTENT}"/ssg-${OS}-ds.xml;
+  ## Generate Guide for each profile
+  oscap xccdf generate guide --profile xccdf_org.ssgproject.content_profile_"${PROFILE}" \
+    --output "${TARGETDIR}"/scap-security-guide-"${VERSION}"-"${HOST}"-"${DATE}"-"${PROFILE}".html \
+    "${CONTENT}"/ssg-${OS}-ds.xml
 done
 
 ## Create tar with all results, scripts, guides, etc.
