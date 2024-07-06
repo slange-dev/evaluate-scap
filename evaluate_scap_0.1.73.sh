@@ -181,4 +181,4 @@ for PROFILE in "${PARRAY[@]}"; do
 done
 
 ## Create tar with all results, scripts, guides, etc.
-tar -cvzf "${HOST}"-"${DATE}"-scap_"${VERSION}".tar.gz "${TARGETDIR}"/"${HOST}"-"${DATE}"-*.xml "${TARGETDIR}"/"${HOST}"-"${DATE}"-*.html "${TARGETDIR}"/remediation-"${HOST}"-"${DATE}"-*.sh "${TARGETDIR}"/scap-security-guide-"${VERSION}"-"${HOST}"-"${DATE}"-*.html
+tar -cvzf "${HOST}"-"${DATE}"-scap_"${VERSION}".tar.gz "${TARGETDIR}"/"${HOST}"/"${HOST}"-"${DATE}"-*.xml "${TARGETDIR}"/"${HOST}"/"${HOST}"-"${DATE}"-*.html "${TARGETDIR}"/"${HOST}"/remediation-"${HOST}"-"${DATE}"-*.sh "${TARGETDIR}"/"${HOST}"/scap-security-guide-"${VERSION}"-"${HOST}"-"${DATE}"-*.html
