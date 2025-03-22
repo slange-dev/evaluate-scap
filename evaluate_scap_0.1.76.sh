@@ -5,87 +5,119 @@
 ## The script generates a "remediation" script and guide for each profile             ##
 ##                                                                                    ##
 ## Usage: ./evaluate_scap_0.1.76.sh >> scap_0.1.76.log 2>> scap_0.1.76.log &          ##
+##                                                                                    ##
 ########################################################################################
 
-## Scap-security-guide version
-VERSION=0.1.76
+# Set scap-security-guide version
+VERSION="0.1.76"
 
-## OS Version
+################
+## OS Version ##
+################
+# (rl9,rhel9,centos9,almalinux8,ol9,ol8,ubuntu2004,debian10,sles15,opensuse15,amzn2)
 # Rocky Linux 9 (missed in v0.1.73)
 #OS=rl9
+# Rocky Linux 8
+#OS=rl8
 
 # Redhat Linux 9
-OS=rhel9
+OS="rhel9"
+# Redhat Linux 8
+#OS=rhel8
 
-# Create directory
-##
-TARGETDIR=/root/openscap_data
+#####################################
+## Report directory and file formt ##
+#####################################
+# Target directory
+#TARGETDIR=/root/openscap_data/${OS}
+TARGETDIR="${HOME}/openscap_data"
 
-if [ ! -d "$TARGETDIR" ]; then
-  ##
-  mkdir -p $TARGETDIR
+# Check if target directory exists
+if [ ! -d "${TARGETDIR}" ]; then
+  # Create target directory
+  mkdir -p "${TARGETDIR}"
 fi
 
-## Hostname
+# Hostname of the system
 HOST=$(hostname)
 
-## Date
+# Date format YYYY-MM-DD (2024-04-08)
 DATE=$(date +%F)
 
 #######################################
 ## Download profile from remote site ##
 #######################################
+# scap-security-guide-0.1.76.tar.bz2
+# scap-security-guide-0.1.76.zip
 
-## Use content from download
-CONTENT=${TARGETDIR}/scap-security-guide-${VERSION}
+# Use content from download
+CONTENT="${TARGETDIR}/scap-security-guide-${VERSION}"
 
-## Check if wget is installed
+# Check if wget is installed
 if [ -x "$(command -v wget)" ]; then
+  # Check if unzip is installed
+  if [ -x "$(command -v unzip)" ]; then
+    # Download scap-security-guide with wget
+    wget "https://github.com/ComplianceAsCode/content/releases/download/v${VERSION}/scap-security-guide-${VERSION}.zip" -P "${TARGETDIR}"
 
-  ## Download scap-security-guide with wget
-  wget https://github.com/ComplianceAsCode/content/releases/download/v${VERSION}/scap-security-guide-${VERSION}.zip -P ${TARGETDIR}
+  # Check if tar is installed
+  elif [ -x "$(command -v tar)" ]; then
+    # Download scap-security-guide with wget (alternative)
+    wget "https://github.com/ComplianceAsCode/content/releases/download/v${VERSION}/scap-security-guide-${VERSION}.tar.bz2" -P "${TARGETDIR}"
 
-  ## Set
-  CURL=0
+  else
+    # Display message
+    echo "Please install unzip or tar"
+  fi
+
+# Check if curl is installed
+elif [ -x "$(command -v curl)" ]; then
+  # Check if unzip is installed
+  if [ -x "$(command -v unzip)" ]; then
+    # Download scap-security-guide with cURL
+    curl -o "${TARGETDIR}/scap-security-guide-${VERSION}.zip" -L "https://github.com/ComplianceAsCode/content/releases/download/v${VERSION}/scap-security-guide-${VERSION}.zip"
+
+  # Check if tar is installed
+  elif [ -x "$(command -v tar)" ]; then
+    # Download scap-security-guide with cURL (alternative)
+    curl -o "${TARGETDIR}/scap-security-guide-${VERSION}.tar.bz2" -L "https://github.com/ComplianceAsCode/content/releases/download/v${VERSION}/scap-security-guide-${VERSION}.tar.bz2"
+
+  else
+    # Display message
+    echo "Please install unzip or tar"
+  fi
+
 else
-
-  ## Set
-  CURL=1
-
+  # Display message
+  echo "Please install wget or curl"
 fi
 
-## Check if cURL is installed
-if [ -x "$(command -v curl)" ] && [ $CURL -eq 1 ]; then
-
-  ## Download scap-security-guide with cURL
-  curl -o ${TARGETDIR}/scap-security-guide-${VERSION}.zip -L https://github.com/ComplianceAsCode/content/releases/download/v${VERSION}/scap-security-guide-${VERSION}.zip
-else
-
-  ##
-  sudo dnf install curl -y
-
-  ## Download scap-security-guide with cURL
-  curl -o ${TARGETDIR}/scap-security-guide-${VERSION}.zip -L https://github.com/ComplianceAsCode/content/releases/download/v${VERSION}/scap-security-guide-${VERSION}.zip
-fi
-
-## Check if unzip is installed
+#####################
+## Extract profile ##
+#####################
+# Check if unzip is installed
 if [ -x "$(command -v unzip)" ]; then
+  # Unzip scap-security-guide
+  unzip -o "${TARGETDIR}/scap-security-guide-${VERSION}.zip" -d "${TARGETDIR}"
 
-  ## Unzip scap-security-guide
-  unzip -o ${TARGETDIR}/scap-security-guide-${VERSION}.zip -d ${TARGETDIR}
+# Check if tar is installed
+elif [ -x "$(command -v tar)" ]; then
+  # Unzip scap-security-guide (alternative)
+  tar -xvjf "${TARGETDIR}/scap-security-guide-${VERSION}.tar.bz2" -C "${TARGETDIR}"
+
 else
-
-  ## Install unzip
-  sudo dnf install unzip -y
-
-  ## Unzip scap-security-guide
-  unzip -o ${TARGETDIR}/scap-security-guide-${VERSION}.zip -d ${TARGETDIR}
+  # Display message
+  echo "Please install unzip or tar"
 fi
 
-## To extract the list of profiles
-oscap info --fetch-remote-resources ${CONTENT}/ssg-${OS}-ds.xml | grep profile | sed 's+.*profile_++'
+# Extract the list of profiles from the downloaded profile
+oscap info --fetch-remote-resources "${CONTENT}/ssg-${OS}-ds.xml" | grep profile | sed 's+.*profile_++'
 
-## The following array processes all available profiles, comment out the ones that are not needed
+##################
+## Profile list ##
+##################
+# The following array processes all available profiles,
+# comment out the ones that are not needed
 PARRAY=(
   #################
   ## rhel9 / rl9 ##
@@ -156,29 +188,46 @@ PARRAY=(
   stig_gui
 )
 
-##
+###################
+## Evaluate SCAP ##
+###################
+# Evaluate each profile
 for PROFILE in "${PARRAY[@]}"; do
-
-  ## Display the profile
+  # Display the profile
   printf "\n#### %s ####\n\n" "${PROFILE}"
 
-  ## Evaluate each profile against oval downloaded from RedHat
+  # Evaluate each profile against oval downloaded from RedHat
   oscap xccdf eval --fetch-remote-resources --profile xccdf_org.ssgproject.content_profile_"${PROFILE}" \
     --results "${TARGETDIR}"/"${HOST}"-"${DATE}"-"${PROFILE}".xml \
     --report "${TARGETDIR}"/"${HOST}"-"${DATE}"-"${PROFILE}".html \
     "${CONTENT}"/ssg-"${OS}"-ds.xml
 
-  ## Generate remediation script for each profile
+  # Generate remediation script for each profile
   oscap xccdf generate fix --template urn:xccdf:fix:script:sh \
     --profile xccdf_org.ssgproject.content_profile_"${PROFILE}" \
     --output "${TARGETDIR}"/remediation-"${HOST}"-"${DATE}"-"${PROFILE}".sh \
     "${CONTENT}"/ssg-${OS}-ds.xml
 
-  ## Generate Guide for each profile
+  # Generate Guide for each profile
   oscap xccdf generate guide --profile xccdf_org.ssgproject.content_profile_"${PROFILE}" \
     --output "${TARGETDIR}"/scap-security-guide-"${VERSION}"-"${HOST}"-"${DATE}"-"${PROFILE}".html \
     "${CONTENT}"/ssg-${OS}-ds.xml
 done
 
-## Create tar with all results, scripts, guides, etc.
-tar -cvzf "${HOST}"-"${DATE}"-scap_"${VERSION}".tar.gz "${TARGETDIR}"/"${HOST}"/"${HOST}"-"${DATE}"-*.xml "${TARGETDIR}"/"${HOST}"/"${HOST}"-"${DATE}"-*.html "${TARGETDIR}"/"${HOST}"/remediation-"${HOST}"-"${DATE}"-*.sh "${TARGETDIR}"/"${HOST}"/scap-security-guide-"${VERSION}"-"${HOST}"-"${DATE}"-*.html
+###########################################################
+## Create zip/tar for all results, scripts, guides, etc. ##
+###########################################################
+# Check if zip is installed
+if [ -x "$(command -v zip)" ]; then
+  # Create zip with all results, scripts, guides, etc.
+  zip -r "${HOST}"-"${DATE}"-scap_"${VERSION}".zip "${TARGETDIR}"/"${HOST}"/"${HOST}"-"${DATE}"-*.xml "${TARGETDIR}"/"${HOST}"/"${HOST}"-"${DATE}"-*.html "${TARGETDIR}"/"${HOST}"/remediation-"${HOST}"-"${DATE}"-*.sh "${TARGETDIR}"/"${HOST}"/scap-security-guide-"${VERSION}"-"${HOST}"-"${DATE}"-*.html
+
+# Check if tar is installed
+elif [ -x "$(command -v tar)" ]; then
+  # Create tar with all results, scripts, guides, etc.
+  tar -cvzf "${HOST}"-"${DATE}"-scap_"${VERSION}".tar.gz "${TARGETDIR}"/"${HOST}"/"${HOST}"-"${DATE}"-*.xml "${TARGETDIR}"/"${HOST}"/"${HOST}"-"${DATE}"-*.html "${TARGETDIR}"/"${HOST}"/remediation-"${HOST}"-"${DATE}"-*.sh "${TARGETDIR}"/"${HOST}"/scap-security-guide-"${VERSION}"-"${HOST}"-"${DATE}"-*.html
+
+else
+  # Display message
+  echo "Please install zip or tar"
+fi
